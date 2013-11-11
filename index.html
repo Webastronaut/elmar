@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Elmar</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="peculiar.css" media="screen" />
+		<link rel="stylesheet" href="style.css" media="screen" />
+	</head>
+	<body style="background:#f8f8f8; padding:5px;">
+		<div class="track">
+			<div class="icon icon-plus btn new-entry" title="Neuer Eintrag">
+				<div class="icon-plus-circle"></div>
+				<div class="icon-plus-line-1"></div>
+				<div class="icon-plus-line-2"></div>
+			</div>
+			<ul class="entries">
+				
+			</ul>
+			<p class="clear">Alle löschen</p>
+			<p class="amount"><strong>Gesamt:</strong> </p>
+			<p class="edit">Bearbeiten</p>
+		</div>
+
+		<script src="jquery.min.js"></script>
+		<script src="jquery-ui-1.8.16.custom.min.js"></script>
+		<script src="json2.js"></script>
+		<script src="jquery.store.js"></script>
+		<script src="timemachine.js"></script>
+		<script>
+			$(function() {
+				timemachine.app.init();
+			});
+		</script>
+	</body>
+</html>
