@@ -1,7 +1,7 @@
 elmar
 =====
 
-Simple time tracker. Checkout the [demo](http://webastronaut.org/labs/elmar/).
+Simple time tracker. Feel free to request an URL to the demo!
 
 ## Features:
 
