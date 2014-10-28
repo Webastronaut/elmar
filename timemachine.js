@@ -340,7 +340,7 @@ timemachine.app = function() {
 
 		if(oldEntries) {
 			$.each(oldEntries, function(k, v) {
-				tracklist.append('<li data-start="' + v.entryStart + '" data-stop="' + v.entryStop + '" data-worktime="' + v.entryWorktime + '"' + (v.tracking ? ' class="current tracking"' : '') + '><img src="/assets/img/drag.gif" alt="" title="Drag" class="drag" /><div contenteditable="true">' + v.entryText + '</div><div class="icon btn icon-minus"><div class="icon-minus-circle"></div><div class="icon-minus-line"></div></div><div class="time"><span>'  + v.entryTime + '</span><div class="icon icon-clock btn' + (v.tracking ? ' stop' : '') + '"><div class="icon-clock-circle"></div><div class="icon-clock-line-1"></div><div class="icon-clock-line-2"></div></div></div></li>');
+				tracklist.append('<li data-start="' + v.entryStart + '" data-stop="' + v.entryStop + '" data-worktime="' + v.entryWorktime + '"' + (v.tracking ? ' class="current tracking"' : '') + '><img src="assets/img/drag.gif" alt="" title="Drag" class="drag" /><div contenteditable="true">' + v.entryText + '</div><div class="icon btn icon-minus"><div class="icon-minus-circle"></div><div class="icon-minus-line"></div></div><div class="time"><span>'  + v.entryTime + '</span><div class="icon icon-clock btn' + (v.tracking ? ' stop' : '') + '"><div class="icon-clock-circle"></div><div class="icon-clock-line-1"></div><div class="icon-clock-line-2"></div></div></div></li>');
 			});
 
 			setFullTime();
