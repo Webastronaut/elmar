@@ -1,3 +1,6 @@
+$color-main: #464646;
+$color-additional: #ccc;
+
 @import 'peculiar';
 
 @-webkit-keyframes rotate {
@@ -11,19 +14,26 @@
 
 * { font-family:'Consolas', Arial, Helvetica, sans-serif; font-size:13px; border:0; outline:0; list-style-type:none; padding:0; }
 body { background:#f8f8f8; padding:5px; }
-label { color:#464646; }
-input { width:90%; color:#464646; }
-li { color:#464646; }
+label { color:$color-main; }
+input { width:90%; color:$color-main; }
+li { color:$color-main; }
 p { margin-bottom:10px; }
 
-.wrap { position:absolute; width:100%; height:100%; }
-.track { width:350px; padding-left:20px; position:relative; margin:0 auto; }
-.entries li { border-bottom:solid 1px #ccc; position:relative; z-index:0; -webkit-transition:opacity .2s; background:#f8f8f8; }
-.entries li:first-child { border-top:solid 1px #ccc; }
-.entries li.dropover [contenteditable] { box-shadow:inset 0 0 10px rgba(0, 0, 0, .5); }
-.entries .current {  }
-.entries li:nth-child(even) { background:#f0f0f0; box-shadow:inset 0 0 10px rgba(0, 0, 0, .1); }
-.entries .btn { position:absolute; top:50%; left:360px; margin-top:-8px; }
+.track { 
+    width:350px; padding-left:20px; position:relative; margin:0 auto; 
+    
+    &__entries li { 
+        border-bottom:solid 1px $color-additional; position:relative; z-index:0; -webkit-transition:opacity .2s; background:#f8f8f8; 
+        
+        &:first-child { border-top:solid 1px $color-additional; }
+    }
+    &__entries li.dropover [contenteditable] { box-shadow:inset 0 0 10px rgba(0, 0, 0, .5); }
+    &__entries .current {  }
+    &__entries li:nth-child(even) { background:#f0f0f0; box-shadow:inset 0 0 10px rgba(0, 0, 0, .1); }
+    &__entries .btn { position:absolute; top:50%; left:360px; margin-top:-8px; }
+
+
+}
 
 
 .icon { margin:0; }
@@ -41,13 +51,13 @@ span[contenteditable], span[contenteditable]:focus { padding:0; box-shadow:none;
 .icon-plus-line-2 { width: 4px; height: 16px; top: 8px; left: 14px; }
 .icon-plus-line-1 { width: 16px; height: 4px; top: 14px; left: 8px; }
 .icon-plus-circle { border-radius: 16px; -webkit-border-radius: 16px; width: 100%; height: 100%; }
-.icon-play-circle { background:#ccc; }
-.icon-stop-circle { background-color: black; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; width: 16px; height: 16px; position: absolute; top: 0; left: 0; }
+.icon-play-circle { background:$color-additional; }
+.icon-stop-circle { background-color: $color-main; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; width: 16px; height: 16px; position: absolute; top: 0; left: 0; }
 .icon-stop-square { background:#fff; height: 8px; width: 8px; position: absolute; top: 4px; left: 4px; }
 .entries .icon-minus { position:absolute; top:50%; left:-22px; margin-top:-8px; display:none; }
 .icon-minus-circle { background:#EFBDBD; -webkit-transition:background .2s; }
 .icon-minus-circle:hover { background:#D6043C; }
-.icon-clock-circle { border-color:#ccc; }
+.icon-clock-circle { border-color:$color-additional; }
 .icon-clock.stop .icon-clock-circle { border-color:#000; }
 .time .btn { left:0; }
 .icon-clock-line-1 { left:8px; }

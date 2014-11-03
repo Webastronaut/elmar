@@ -1719,39 +1719,29 @@ li {
 p {
   margin-bottom: 10px; }
 
-.wrap {
-  position: absolute;
-  width: 100%;
-  height: 100%; }
-
 .track {
   width: 350px;
   padding-left: 20px;
   position: relative;
   margin: 0 auto; }
-
-.entries li {
-  border-bottom: solid 1px #ccc;
-  position: relative;
-  z-index: 0;
-  -webkit-transition: opacity .2s;
-  background: #f8f8f8; }
-
-.entries li:first-child {
-  border-top: solid 1px #ccc; }
-
-.entries li.dropover [contenteditable] {
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); }
-
-.entries li:nth-child(even) {
-  background: #f0f0f0;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); }
-
-.entries .btn {
-  position: absolute;
-  top: 50%;
-  left: 360px;
-  margin-top: -8px; }
+  .track__entries li {
+    border-bottom: solid 1px #ccc;
+    position: relative;
+    z-index: 0;
+    -webkit-transition: opacity .2s;
+    background: #f8f8f8; }
+    .track__entries li:first-child {
+      border-top: solid 1px #ccc; }
+  .track__entries li.dropover [contenteditable] {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); }
+  .track__entries li:nth-child(even) {
+    background: #f0f0f0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); }
+  .track__entries .btn {
+    position: absolute;
+    top: 50%;
+    left: 360px;
+    margin-top: -8px; }
 
 .icon {
   margin: 0; }
@@ -1808,7 +1798,7 @@ span[contenteditable], span[contenteditable]:focus {
   background: #ccc; }
 
 .icon-stop-circle {
-  background-color: black;
+  background-color: #464646;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
