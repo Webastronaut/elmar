@@ -5,34 +5,26 @@
 		<title>Elmar</title>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="peculiar.css" media="screen" />
-		<link rel="stylesheet" href="style.css" media="screen" />
+		<link rel="stylesheet" href="assets/css/main.min.css" media="screen" />
 	</head>
-	<body style="background:#f8f8f8; padding:5px;">
+	<body>
 		<div class="track">
-			<div class="icon icon-plus btn new-entry" title="Neuer Eintrag">
+			<div class="icon icon-plus btn new-entry track__new-entry" title="Neuer Eintrag">
 				<div class="icon-plus-circle"></div>
 				<div class="icon-plus-line-1"></div>
 				<div class="icon-plus-line-2"></div>
 			</div>
-			<ul class="entries">
+			<ul class="entries track__entries">
 
 			</ul>
-			<p class="clear">Alle löschen</p>
-			<p class="amount"><strong>Gesamt:</strong> </p>
-			<p class="edit">Bearbeiten</p>
+			<p class="track__clear">Alle löschen</p>
+			<p class="amount track__amount"><strong>Gesamt:</strong> </p>
+			<p class="edit track__edit">Bearbeiten</p>
 		</div>
 
+        <!-- @TODO Remove old jQuery 1.7 Version with 2.1 -->
 		<script src="jquery.min.js"></script>
-		<!--
-		@TODO Update jQuery 1.7.1 -> 2.1.1
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		-->
-		<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-
-		<script src="json2.js"></script>
-		<script src="jquery.store.js"></script>
-		<script src="timemachine.js"></script>
+		<script src="assets/js/main.min.js"></script>
 		<script>
 			$(function() {
 				timemachine.app.init();
