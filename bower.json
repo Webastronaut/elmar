@@ -21,6 +21,7 @@
 	],
 	"devDependencies": {
 		"jquery": "~2.1.1",
-		"jquery-ui": "~1.11.2"
+		"jquery-ui": "~1.11.2",
+        "jQuery-store": "https://github.com/medialize/jQuery-store.git"
 	}
 }
