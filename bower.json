@@ -1,0 +1,27 @@
+{
+	"name": "elmar",
+	"description": "Simple time tracker",
+	"version": "2.0.0",
+	"homepage": "http://webastronaut.org/labs/elmar/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Webastronaut/elmar.git"
+	},
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"node_modules",
+		"bower_components",
+		".DS_Store?",
+		"._*",
+		".Spotlight-V100",
+		".Trashes",
+		"ehthumbs.db",
+		"Thumbs.db"
+	],
+	"devDependencies": {
+		"jquery": "~2.1.1",
+		"jquery-ui": "~1.11.2",
+        "jQuery-store": "https://github.com/medialize/jQuery-store.git"
+	}
+}

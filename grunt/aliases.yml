@@ -1,0 +1,47 @@
+###
+# + Custom Task Definitions
+# https://github.com/firstandthird/load-grunt-config
+# ==================================================================
+#
+
+# clean dependencies
+'clean-deps':
+  - 'clean:deps'
+
+# clean temporary files/folders
+'clean-temp':
+  - 'clean:temp'
+
+# copy dependencies
+'copy-deps':
+  - 'clean-deps'
+  - 'copy:jqueryUI'
+  - 'copy:jqueryStore'
+
+# process stylesheets
+'build-css':
+  - 'sass:main'
+  - 'autoprefixer:main'
+  - 'csswring:main'
+
+# process javascripts
+'build-js':
+  - 'jshint:main'
+  - 'uglify:main'
+
+# process everything
+'build':
+  - 'copy-deps'
+  - 'build-css'
+  - 'build-js'
+  # - 'clean:temp'
+
+# start watch
+'start-watch':
+  - 'watch'
+
+# build job as default
+'default':
+  - 'build'
+
+# = Custom Task Definitions

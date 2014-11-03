@@ -4,9 +4,8 @@
  * Authors: Rodney Rehm
  * Web: http://medialize.github.com/jQuery-store/
  * 
- * Licensed under
- *   MIT License http://www.opensource.org/licenses/mit-license
- *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ * Licensed under the MIT License:
+ *   http://www.opensource.org/licenses/mit-license.php
  *
  */
 
@@ -69,15 +68,12 @@ $.store = function( driver, serializers )
 				return true; // continue;
 			
 			that.driver = this;
-			if( that.driver.init() === false )
-			{
-				that.driver = null;
-				return true; // continue;
-			}
-			
 			return false; // break;
 		});
 	}
+	
+	// initialize driver
+	this.driver.init();
 	
 	// use default serializers if not told otherwise
 	if( !serializers )
@@ -131,11 +127,8 @@ $.extend( $.store.prototype, {
 			var serializer = that.serializers[ this + "" ];
 			if( !serializer || !serializer.encode )
 				return true; // continue;
-			try
-			{
-				value = serializer.encode( value );
-			}
-			catch( e ){}
+
+			value = serializer.encode( value );
 		});
 
 		return value;
@@ -174,17 +167,11 @@ $.store.drivers = {
 		{
 			try
 			{
-				// Firefox won't allow localStorage if cookies are disabled
-				if (!!window.localStorage) {
-					// Safari's "Private" mode throws a QUOTA_EXCEEDED_ERR on setItem
-					window.localStorage.setItem("jQuery Store Availability test", true);
-					window.localStorage.removeItem("jQuery Store Availability test");
-					return true;
-				};
-				return false;
+				return !!window.localStorage;
 			}
 			catch(e)
 			{
+				// Firefox won't allow localStorage if cookies are disabled
 				return false;
 			}
 		},
@@ -231,20 +218,13 @@ $.store.drivers = {
 			// $.store can only utilize one userData store at a time, thus avoid duplicate initialization
 			if( this.initialized )
 				return;
-			
-			try
-			{
-				// Create a non-existing element and append it to the root element (html)
-				this.element = document.createElement( this.nodeName );
-				document.documentElement.insertBefore( this.element, document.getElementsByTagName('title')[0] );
-				// Apply userData behavior
-				this.element.addBehavior( "#default#userData" );
-				this.initialized = true;
-			}
-			catch( e )
-			{
-				return false; 
-			}
+				
+			// Create a non-existing element and append it to the root element (html)
+			this.element = document.createElement( this.nodeName );
+			document.documentElement.appendChild( this.element );
+			// Apply userData behavior
+			this.element.addBehavior( "#default#userData" );
+			this.initialized = true;
 		},
 		get: function( key )
 		{
@@ -265,11 +245,8 @@ $.store.drivers = {
 		flush: function()
 		{
 			// flush by expiration
-			var attrs = this.element.xmlDocument.firstChild.attributes;
-			for (var i = attrs.length - 1; i >= 0; i--) {
-				this.element.removeAttribute( attrs[i].nodeName );
-			}
-        		this.element.save( this.nodeName );
+			this.element.expires = (new Date).toUTCString();
+			this.element.save( this.nodeName );
 		}
 	},
 	
@@ -430,5 +407,6 @@ $.store.serializers = {
 		}
 	}
 };
+
 
 })(jQuery);
