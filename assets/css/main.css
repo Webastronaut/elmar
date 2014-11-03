@@ -1686,14 +1686,33 @@
 
 @-webkit-keyframes rotate {
   0% {
-    -webkit-transform: rotate(-180deg) translate(-1.3px, -1.3px); }
+    -webkit-transform: rotate(-180deg) translate(-1.3px, -1.3px);
+            transform: rotate(-180deg) translate(-1.3px, -1.3px); }
   100% {
-    -webkit-transform: rotate(180deg) translate(-1.3px, -1.3px); } }
+    -webkit-transform: rotate(180deg) translate(-1.3px, -1.3px);
+            transform: rotate(180deg) translate(-1.3px, -1.3px); } }
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-180deg) translate(-1.3px, -1.3px);
+            transform: rotate(-180deg) translate(-1.3px, -1.3px); }
+  100% {
+    -webkit-transform: rotate(180deg) translate(-1.3px, -1.3px);
+            transform: rotate(180deg) translate(-1.3px, -1.3px); } }
 @-webkit-keyframes rotateHour {
   0% {
-    -webkit-transform: rotate(-180deg) translate(-1px, -1px); }
+    -webkit-transform: rotate(-180deg) translate(-1px, -1px);
+            transform: rotate(-180deg) translate(-1px, -1px); }
   100% {
-    -webkit-transform: rotate(180deg) translate(-1px, -1px); } }
+    -webkit-transform: rotate(180deg) translate(-1px, -1px);
+            transform: rotate(180deg) translate(-1px, -1px); } }
+@keyframes rotateHour {
+  0% {
+    -webkit-transform: rotate(-180deg) translate(-1px, -1px);
+            transform: rotate(-180deg) translate(-1px, -1px); }
+  100% {
+    -webkit-transform: rotate(180deg) translate(-1px, -1px);
+            transform: rotate(180deg) translate(-1px, -1px); } }
 * {
   font-family: 'Consolas', Arial, Helvetica, sans-serif;
   font-size: 13px;
@@ -1728,7 +1747,7 @@ p {
     border-bottom: solid 1px #ccc;
     position: relative;
     z-index: 0;
-    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
     background: #f8f8f8; }
     .track__entries li:first-child {
       border-top: solid 1px #ccc; }
@@ -1748,8 +1767,8 @@ p {
 
 .btn {
   cursor: pointer;
-  -webkit-border-radius: 8px;
-  -webkit-transition: box-shadow .1s ease-out;
+  border-radius: 8px;
+  transition: box-shadow .1s ease-out;
   display: inline-block;
   margin: 0 10px 0 0; }
 
@@ -1759,7 +1778,7 @@ p {
 [contenteditable] {
   padding: 10px 12px;
   min-height: 14px;
-  -webkit-transition: box-shadow .2s ease-out; }
+  transition: box-shadow .2s ease-out; }
 
 [contenteditable]:focus {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
@@ -1771,7 +1790,7 @@ span[contenteditable], span[contenteditable]:focus {
 .icon-plus {
   width: 32px;
   height: 32px;
-  -webkit-border-radius: 16px;
+  border-radius: 16px;
   clear: both;
   margin: 0 auto;
   display: block; }
@@ -1790,7 +1809,7 @@ span[contenteditable], span[contenteditable]:focus {
 
 .icon-plus-circle {
   border-radius: 16px;
-  -webkit-border-radius: 16px;
+  border-radius: 16px;
   width: 100%;
   height: 100%; }
 
@@ -1800,7 +1819,7 @@ span[contenteditable], span[contenteditable]:focus {
 .icon-stop-circle {
   background-color: #464646;
   border-radius: 8px;
-  -webkit-border-radius: 8px;
+  border-radius: 8px;
   -moz-border-radius: 8px;
   width: 16px;
   height: 16px;
@@ -1825,7 +1844,7 @@ span[contenteditable], span[contenteditable]:focus {
 
 .icon-minus-circle {
   background: #EFBDBD;
-  -webkit-transition: background .2s; }
+  transition: background .2s; }
 
 .icon-minus-circle:hover {
   background: #D6043C; }
@@ -1848,17 +1867,23 @@ span[contenteditable], span[contenteditable]:focus {
 .icon-clock.stop .icon-clock-circle ~ .icon-clock-line-1 {
   position: inherit;
   -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
   -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
   top: 8px;
   left: 8px;
-  -webkit-animation: rotate infinite 3s linear; }
+  -webkit-animation: rotate infinite 3s linear;
+          animation: rotate infinite 3s linear; }
 
 .icon-clock.stop .icon-clock-circle ~ .icon-clock-line-2 {
   position: inherit;
   -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
   -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
   left: 8px;
-  -webkit-animation: rotate infinite 9s linear; }
+  -webkit-animation: rotate infinite 9s linear;
+          animation: rotate infinite 9s linear; }
 
 .time {
   clear: both;
@@ -1876,7 +1901,7 @@ span[contenteditable], span[contenteditable]:focus {
   opacity: 0;
   position: absolute;
   left: 26px;
-  -webkit-transition: opacity .2s; }
+  transition: opacity .2s; }
 
 .time:hover span {
   opacity: 1; }
